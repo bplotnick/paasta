@@ -26,6 +26,7 @@ from pyramid.config import Configurator
 from wsgicors import CORS
 
 import paasta_tools.api
+from paasta_tools import kubernetes_tools
 from paasta_tools import marathon_tools
 from paasta_tools.api import settings
 from paasta_tools.utils import load_system_paasta_config
@@ -117,6 +118,8 @@ def setup_paasta_api():
         marathon_servers=settings.marathon_servers,
         cached=False,
     )
+
+    settings.kubernetes_clients = kubernetes_tools.get_kubernetes_clients()
 
     # Set up transparent cache for http API calls. With expire_after, responses
     # are removed only when the same request is made. Expired storage is not a
