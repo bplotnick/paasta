@@ -61,6 +61,7 @@ setup(
         'pymesos >= 0.2.0',
         'pyramid-swagger >= 2.3.0',
         'pysensu-yelp >= 0.4.0',
+        'PyStaticConfiguration',
         'pytimeparse >= 1.1.0',
         'pytz >= 2014.10',
         'python-crontab>=2.1.1',
